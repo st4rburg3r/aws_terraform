@@ -22,9 +22,6 @@ resource "aws_s3_object" "object01" {
         "jpg"  = "image/jpeg",
         "jpeg" = "image/jpeg"
     }, split(".", each.value)[length(split(".", each.value)) - 1], "application/octet-stream")  #setting the content type of the s3 object based on the file extension, with a default of application/octet-stream for unknown file types
-
-
-
 }
 
 # creating a cloudfront distribution to serve the website from the s3 bucket
@@ -124,12 +121,6 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     cloudfront_default_certificate = true
   }
 }
-
-
-
-
-
-
 
 #bucket policy to allow cloudfront to access the bucket
 #authorize cloudfront to access the bucket by allowing s3:GetObject and s3:ListBucket permissions to the cloudfront service principal, with a condition that restricts access to requests originating from the specific cloudfront distribution
