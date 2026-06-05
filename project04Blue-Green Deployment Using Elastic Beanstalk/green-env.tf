@@ -13,7 +13,7 @@ resource "aws_elastic_beanstalk_application_version" "v2" {
   application = aws_elastic_beanstalk_application.app.name
   description = "Application Version 2.0 - New Feature Release"
   bucket      = aws_s3_bucket.app_versions.id
-  key         = aws_s3_object.app_v2.id
+  key         = aws_s3_object.app_v2.key
 
   tags = var.tags
 }
@@ -25,7 +25,7 @@ resource "aws_elastic_beanstalk_environment" "green" {
   solution_stack_name = var.solution_stack_name
   tier                = "WebServer"
   version_label       = aws_elastic_beanstalk_application_version.v2.name
-
+  wait_for_ready_timeout = "60m"
   # IAM Settings
   setting {
     namespace = "aws:autoscaling:launchconfiguration"

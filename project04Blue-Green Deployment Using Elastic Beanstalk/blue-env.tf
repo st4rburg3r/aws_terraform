@@ -28,6 +28,8 @@ resource "aws_elastic_beanstalk_environment" "blue" {
     solution_stack_name = var.solution_stack_name
     tier = "WebServer"
     version_label = aws_elastic_beanstalk_application_version.v1.name
+    wait_for_ready_timeout = "60m"
+    # IAM Settings
 
     setting {
     namespace = "aws:autoscaling:launchconfiguration"

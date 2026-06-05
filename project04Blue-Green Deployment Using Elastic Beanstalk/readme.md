@@ -8,3 +8,5 @@ Complete infrastructure with load balancers, auto-scaling, and health checks
 Ability to instantly swap traffic between environments with zero downtime
 
 ![alt text](image-1.png)
+
+![alt text](image-2.png)
