@@ -5,3 +5,4 @@
 .terraform.lock.hcl
 *.pem
 *.pub
+tfplan
