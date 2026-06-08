@@ -1,0 +1,8 @@
+# Ignore Terraform local state and binaries
+.terraform/providers/registry.terraform.io/hashicorp/aws/6.42.0/darwin_arm64
+*.tfstate
+*.tfstate.backup
+.terraform.lock.hcl
+*.pem
+*.pub
+tfplan
