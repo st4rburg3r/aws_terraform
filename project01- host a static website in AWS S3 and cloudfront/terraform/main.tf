@@ -25,7 +25,8 @@ resource "aws_s3_object" "object01" {
 }
 
 # creating a cloudfront distribution to serve the website from the s3 bucket
-
+#we have to link the cloudfront distribution to the s3 bucket using an origin access control, which allows cloudfront to access the s3 bucket securely without making it public
+#the domain name has to be the bucketregional domain name because thats how cloudfront access the bucket.
 resource "aws_cloudfront_distribution" "s3_distribution" {
   origin {
     domain_name              = aws_s3_bucket.bucket01.bucket_regional_domain_name #has to be same as bucket name
