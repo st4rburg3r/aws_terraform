@@ -1,0 +1,9 @@
+# Verify AWS credentials are set
+aws sts get-caller-identity
+
+Create a key pair using AWS CLI:
+
+
+aws ec2 create-key-pair --key-name terraform-demo-key \
+  --query 'KeyMaterial' --output text > terraform-demo-key.pem
+chmod 400 terraform-demo-key.pem
