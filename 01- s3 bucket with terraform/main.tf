@@ -14,7 +14,7 @@ provider "aws" {
 
 # Create a S3 bucket
 resource "aws_s3_bucket" "bucket01" {
-  bucket = "terraform-practice-bucke-trupti"
+  bucket = "terraform-practice-bucket-twupsssss"
 
   tags = {
     Name        = "My bucket"
